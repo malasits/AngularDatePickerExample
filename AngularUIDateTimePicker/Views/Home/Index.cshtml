@@ -1,0 +1,31 @@
+﻿<div ng-app="TESZTApp">
+    <div ng-controller="TESZTController">
+
+        <div class="row">
+            <div class="col-md-2">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{dateFormat}}" ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions"
+                           show-button-bar="false" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+
+            <div class="col-md-10">
+                <span>Választott dátum: <b>{{dt | date: dateFormat}}</b></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+            </div>
+
+            <div class="col-md-10">
+                <span>Választott időpont: <b>{{mytime | date:'HH:mm'}}</b></span>
+            </div>
+        </div>
+
+    </div>
+</div>
